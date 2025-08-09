@@ -28,4 +28,5 @@ const NotePreviewPage = async ({ params }: NotePreviewPageProps) => {
     </Modal>
   );
 };
+
 export default NotePreviewPage;
