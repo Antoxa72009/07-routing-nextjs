@@ -1,7 +1,7 @@
 import { dehydrate, HydrationBoundary, QueryClient } from '@tanstack/react-query';
 import NoteDetails from './NoteDetails.client';
 import { fetchNoteById } from '@/lib/api';
-import { notFound } from 'next/navigation';
+
 
 interface NotesPageProps {
   params: Promise<{ id: string }>;
@@ -9,9 +9,7 @@ interface NotesPageProps {
 
 export default async function NoteDetailsRoute({ params }: NotesPageProps) {
   const { id } = await params;
-  if (!id) {
-    notFound();
-  }
+  
 
   const queryClient = new QueryClient();
 
