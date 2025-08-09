@@ -11,8 +11,10 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
+  modal,
 }: {
   children: React.ReactNode;
+  modal: React.ReactNode;
 }) {
   return (
     <html lang="en">
@@ -22,7 +24,7 @@ export default function RootLayout({
           <main>{children}</main>
           <Footer />
         </TanStackProvider>
-        {/* Портал для модалок */}
+        {modal}
         <div id="modal-root" />
       </body>
     </html>
