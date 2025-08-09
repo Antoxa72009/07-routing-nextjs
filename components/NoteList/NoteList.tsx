@@ -28,9 +28,8 @@ export default function NotesList({ notes, currentTag = 'All' }: NoteListProps) 
           <h2 className={css.title}>{note.title}</h2>
           <p className={css.content}>{note.content}</p>
           <div className={css.footer}>
-            <span className={css.tag}>{note.tag}</span>
-            {/* Посилання на модалку у контексті фільтра */}
-            <Link className={css.link} href={`/notes/filter/${encodeURIComponent(currentTag)}/@modal/${note.id}`}>
+            <span className={css.tag}>{note.tag}</span>            
+            <Link className={css.link} href={`/notes/${note.id}`} scroll={false}>
               View details
             </Link>
             <button
