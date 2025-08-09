@@ -89,7 +89,7 @@ export default function Notes({ initialData, tag: initialTag }: NotesProps) {
       <Toaster position="top-center" />
       {isLoading && <p>Loading...</p>}
       {isError && <p>Error...</p>}
-      {notes.length > 0 && <NotesList notes={notes} currentTag={initialTag ?? 'All'} />}
+      {notes.length > 0 && <NotesList notes={notes} />}
       {isModalOpen && (
         <Modal onClose={closeModal}>
           <NoteForm onCloseModal={closeModal} />
