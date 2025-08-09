@@ -17,7 +17,6 @@ const capitalize = (s: string) => s.charAt(0).toUpperCase() + s.slice(1).toLower
 export default async function NotesPage({ params }: NotesPageProps) {
   const { slug } = await params;
 
-  // Очікуємо EXACTLY one segment: /notes/filter/<tag>
   if (!slug || slug.length !== 1) {
     notFound();
   }

@@ -1,5 +1,5 @@
 import axios from 'axios';
-import type { Note, NoteTag } from '@/types/note'; // Зверніть увагу на імпорт NoteTag
+import type { Note, NoteTag } from '@/types/note'; 
 
 const API_BASE_URL = 'https://notehub-public.goit.study/api';
 const NOTES_ENDPOINT = '/notes';
@@ -25,7 +25,7 @@ export interface FetchNotesParams {
   page?: number;
   search?: string;
   perPage?: number;
-  tag?: NoteTag; // Використовуємо NoteTag для типізації tag
+  tag?: NoteTag; 
 }
 
 export interface FetchNotesResponse {
@@ -47,7 +47,7 @@ export const fetchNotes = async ({
   if (search) {
     params.search = search;
   }
-  if (tag) { // Ця умова важлива
+  if (tag) { 
     params.tag = tag;
   }
   const response = await axiosInstance.get<FetchNotesResponse>(NOTES_ENDPOINT, { params });
@@ -62,7 +62,7 @@ export const fetchNoteById = async (id: string): Promise<Note> => {
 export const createNote = async (note: {
   title: string;
   content: string;
-  tag: NoteTag; // Також використовуємо NoteTag тут
+  tag: NoteTag; 
 }): Promise<Note> => {
   const response = await axiosInstance.post<Note>(NOTES_ENDPOINT, note);
   return response.data;

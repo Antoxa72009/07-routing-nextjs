@@ -9,7 +9,7 @@ import type { NewNoteData } from "../../types/note";
 import { createNote } from "@/lib/api";
 
 interface NoteFormProps {
-  onCloseModal: () => void; // Додано пропс onCloseModal
+  onCloseModal: () => void;
 }
 
 interface FormValues {
